@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.TransactionLogsDao;
+import com.example.demo.model.TransactionLog;
 import com.example.demo.service.TransactionLogService;
 
 
@@ -20,11 +22,11 @@ import com.example.demo.service.TransactionLogService;
 @RequestMapping("/transactions")
 public class TransactionLogsAppController {
 
-	@Resource
+	@Autowired
 	TransactionLogService transactionLogService;
 	
 	@PostMapping(value="/saveLogs")
-	void saveTransactionLogs(@RequestBody List<TransactionLogsDao> transactionLogs) {
+	void saveTransactionLogs(@RequestBody List<TransactionLog> transactionLogs) {
 		transactionLogService.saveTransactionLogs(transactionLogs);
 	}
 	
@@ -35,12 +37,12 @@ public class TransactionLogsAppController {
 	
 
 	@PutMapping(value="/updateLogs")
-	void updateTransacionLogs(@RequestBody TransactionLogsDao transactionLog) {
+	void updateTransacionLogs(@RequestBody TransactionLog transactionLog) {
 		transactionLogService.updateTransacionLogs(transactionLog);
 	}
 	
 	@PutMapping(value="/resetLogs")
-	boolean deleteTransactionLogs(@RequestBody TransactionLogsDao transactionLog) {
+	boolean deleteTransactionLogs(@RequestBody TransactionLog transactionLog) {
 		return transactionLogService.deleteTransactionLogs(transactionLog);
 	}
 	

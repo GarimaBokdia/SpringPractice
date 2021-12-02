@@ -33,5 +33,20 @@ public class User {
 	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
 	
 }

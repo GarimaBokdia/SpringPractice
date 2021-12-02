@@ -1,5 +1,8 @@
 package com.example.demo.dao;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TransactionLogsDao {
 	long transactionId;
 	UserDao user;

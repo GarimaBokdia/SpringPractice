@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+
 /*
  * A logger, to send output to the log (the console, in this example).
 
@@ -18,29 +19,30 @@ A CommandLineRunner that runs the RestTemplate (and, consequently, fetches our q
 @SpringBootApplication
 public class RestApiPracticeApplication {
 	private static final Logger log = LoggerFactory.getLogger(RestApiPracticeApplication.class);
+
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiPracticeApplication.class, args);
 	}
 	
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
+	
 
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		/*
-		 * return args -> { Quote quote = restTemplate.getForObject(
-		 * "https://quoters.apps.pcfone.io/api/random", Quote.class);
-		 * log.info(quote.toString()); };
-		 */
-		
-		return args -> {
-			TransactionLogDummy quote = restTemplate.getForObject(
-					"https://jsonmock.hackerrank.com/api/transactions/", TransactionLogDummy.class);
-			log.info(quote.toString());
-		};
-		
-	}
+	/*
+	 * @Bean public RestTemplate restTemplate(RestTemplateBuilder builder) { return
+	 * builder.build(); }
+	 * 
+	 * @Bean public CommandLineRunner run(RestTemplate restTemplate) throws
+	 * Exception {
+	 * 
+	 * return args -> { Quote quote = restTemplate.getForObject(
+	 * "https://quoters.apps.pcfone.io/api/random", Quote.class);
+	 * log.info(quote.toString()); };
+	 * 
+	 * 
+	 * return args -> { TransactionLogDummy quote = restTemplate.getForObject(
+	 * "https://jsonmock.hackerrank.com/api/transactions/",
+	 * TransactionLogDummy.class); log.info(quote.toString()); };
+	 * 
+	 * }
+	 */
 
 }

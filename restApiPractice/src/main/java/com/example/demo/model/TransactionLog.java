@@ -58,5 +58,33 @@ public class TransactionLog {
 	public String getIp() {
 		return ip;
 	}
+
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public void setUser(UserDao user) {
+		this.user = user;
+	}
+
+	public void setAddress(LocationDao address) {
+		this.address = address;
+	}
+
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public void setTxnType(TransactionTypes txnType) {
+		this.txnType = txnType;
+	}
+
+	public void setAmount(double amount) {
+		Amount = amount;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
 	
 }

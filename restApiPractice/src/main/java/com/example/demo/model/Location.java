@@ -30,5 +30,17 @@ public class Location {
 	public String getCity() {
 		return city;
 	}
+	public void setLocationId(int locationId) {
+		this.locationId = locationId;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
 	
 }
